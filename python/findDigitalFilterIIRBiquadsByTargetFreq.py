@@ -160,6 +160,35 @@ def formatBiquadsForC(sos, nome_array="biquads_df2t", incluir_a0=False, casas=9)
     return "\n".join(linhas)
 
 
+def formatBiquadsAsStaticFloats(sos, prefixo="lowpass_stage", sufixo="_coeffs", incluir_a0=False, incluir_state=True):
+    """
+    Formata os biquads como arrays 'static float' separados por estagio,
+    no mesmo estilo usado em main2.cpp (pronto para copiar e colar):
+
+        static float lowpass_stage1_coeffs[5] = {
+            ...
+        };
+
+    Se incluir_state=True, tambem gera os arrays de estado (zerados)
+    exigidos por dsps_biquad_f32.
+    """
+    matriz = sos if incluir_a0 else biquads_df2t(sos)
+    blocos = []
+
+    for i, secao in enumerate(matriz, start=1):
+        nome = f"{prefixo}{i}{sufixo}"
+        linhas = [f"static float {nome}[{secao.shape[0]}] = {{"]
+        linhas += [f"    {repr(float(valor))}f," for valor in secao]
+        linhas.append("};")
+        blocos.append("\n".join(linhas))
+
+    if incluir_state:
+        for i in range(1, matriz.shape[0] + 1):
+            blocos.append(f"static float {prefixo}{i}_state[2] = {{0.0f, 0.0f}};")
+
+    return "\n\n".join(blocos)
+
+
 def _imprimir_resultado(fDesejada, ordem, fs, filterType, fc, f_complementar_hz, magnitude_desejada, magnitude_obtida):
     print("Resultado do filtro IIR em biquads:")
     print(f"  Tipo: {filterType}")
@@ -218,3 +247,5 @@ if __name__ == '__main__':
     print("Frequência(s) de Corte escolhida(s) (Hz):", fc)
     print("\nCoeficientes para Direct Form II Transposto:")
     print(formatBiquadsForC(sos))
+    print("\nPronto para colar no ESP32 (static float por estagio):")
+    print(formatBiquadsAsStaticFloats(sos, prefixo="lowpass_stage"))

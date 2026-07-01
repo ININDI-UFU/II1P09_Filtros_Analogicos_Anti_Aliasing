@@ -23,9 +23,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "C:/SourceCode/II1P09_Digital_Filter/.pio/build/esp32dev/firmware.elf",
+            "executable": "C:/Prof_Josue/0II1/II1P09_Filtros_Analogicos_Anti_Aliasing/.pio/build/esp32dev/firmware.elf",
             "projectEnvName": "esp32dev",
-            "toolchainBinDir": "C:/Users/josuemorais/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/config/platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": {
                 "type": "PlatformIO",
@@ -36,18 +36,18 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "C:/SourceCode/II1P09_Digital_Filter/.pio/build/esp32dev/firmware.elf",
+            "executable": "C:/Prof_Josue/0II1/II1P09_Filtros_Analogicos_Anti_Aliasing/.pio/build/esp32dev/firmware.elf",
             "projectEnvName": "esp32dev",
-            "toolchainBinDir": "C:/Users/josuemorais/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/config/platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "C:/SourceCode/II1P09_Digital_Filter/.pio/build/esp32dev/firmware.elf",
+            "executable": "C:/Prof_Josue/0II1/II1P09_Filtros_Analogicos_Anti_Aliasing/.pio/build/esp32dev/firmware.elf",
             "projectEnvName": "esp32dev",
-            "toolchainBinDir": "C:/Users/josuemorais/.platformio/packages/toolchain-xtensa-esp32/bin",
+            "toolchainBinDir": "C:/config/platformio/packages/toolchain-xtensa-esp32/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "loadMode": "manual"
         }
