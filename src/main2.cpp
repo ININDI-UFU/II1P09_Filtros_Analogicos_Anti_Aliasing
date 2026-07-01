@@ -21,19 +21,19 @@ constexpr float ADC_REF_VOLTS = 3.3f;
 // Coeficientes no formato exigido por dsps_biquad_f32:
 // [b0, b1, b2, a1, a2], com a0 = 1.
 static float lowpass_stage1_coeffs[5] = {
-    0.046582906636443676f,
-    0.09316581327288735f,
-    0.046582906636443676f,
-    -0.3289756779965208f,
-    0.06458765330651409f,
+    0.029058182199822265f,
+    0.05811636439964453f,
+    0.029058182199822265f,
+    -0.5159313372981117f,
+    0.1011974058740317f,
 };
 
 static float lowpass_stage2_coeffs[5] = {
     1.0f,
     2.0f,
     1.0f,
-    -0.4531195201603722f,
-    0.4663255708081653f,
+    -0.7002830914282003f,
+    0.49467548859626914f,
 };
 
 static float lowpass_stage1_state[2] = {0.0f, 0.0f};
