@@ -1,5 +1,3 @@
-Call python.exe -m pip install --upgrade pip
-Call pip install --upgrade soundfile
 Call pip install --upgrade nodejs
 Call pip install --upgrade ipympl
 Call pip install --upgrade ipython
