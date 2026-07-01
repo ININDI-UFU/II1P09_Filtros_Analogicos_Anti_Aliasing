@@ -9,7 +9,7 @@
 // - envia sinal original e sinal filtrado pela serial (wserial/Teleplot)
 
 constexpr uint8_t ADC_PIN = 34;
-constexpr uint32_t SERIAL_BAUD = 921600;
+constexpr uint32_t SERIAL_BAUD = 115200;
 
 constexpr float SAMPLE_RATE_HZ = 100.0f;
 constexpr uint32_t SAMPLE_PERIOD_US = static_cast<uint32_t>(1000000.0f / SAMPLE_RATE_HZ);
